@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tranfer</title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/dash-trans-style.css" />
+	</head>
+
+	<body class="transfer">
+		<nav class="nav">
+			<img src="../img/landing-page/logo.svg" alt="Cashify logo" class="nav__logo" id="logo" />
+			<ul class="nav__links">
+				<li class="nav__item">
+					<a class="nav__link" href="dashboard.htm">Dashboard</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="">Fund Tranfer</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="../common/agrement.html">Privacy Policies</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="../common/contact_us.htm">Contact Us</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="index.html">Logout</a>
+				</li>
+				<li class="nav__item" id="nav_hamburger">
+					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABD0lEQVRoge3YsS4FQRiG4fcTEg4SEgqNe3AHWlHS6U6EQuJeFCokGlemUJCQsCE5xa/QrN0Rmz3O7ES+p/wzxbub2exkwMzMzP4PNQcRsQWcAZv5czp5BC4lPdSH84mFN8BelqT+doD9+mAusWiSp2UqrcbU1toAjoG1HEU9vADXkp6GDjEzMytO688OEBELwErmlq7eJP1+jIqIcURUUa4qIsbN7tSh8RQY/cGbm5URcNIcph7klrJPwBO+Gr/56RtZBJZmXdTTu6SPoSPMzMyKlLrXWgeOgOX8OZ1UwJ2k5/owdWV6BRxkSepvFzisD1KHxtU8LVNpNaa21jZwnlpciFfgQtL90CFmZmbF+QRuGNEsjoA1dwAAAABJRU5ErkJggg==" class="nav__bars">
+					<div class="nav_dropdown">
+						<div class="dropdown_item">
+							<img src="https://img.icons8.com/material/96/000000/dashboard-layout.png"/>
+							<a href="../common/dashboard.htm">Dashboard</a>
+						</div>
+						<div class="dropdown_item">
+							<img src="https://img.icons8.com/ios-glyphs/90/000000/back-sorting.png"/>
+							<a href="#">Fund Transfer</a>
+						</div>
+						<div class="dropdown_item">
+							<img src="https://img.icons8.com/ios-filled/50/000000/terms-and-conditions.png" />
+							<a href="../common/agrement.html">Privacy Policies</a>
+						</div>
+						<div class="dropdown_item">
+							<img src="https://img.icons8.com/material/30/000000/call-female.png" />
+							<a href="../common/contact_us.htm">Contact Us</a>
+						</div>
+						<div class="dropdown_item">
+							<img src="https://img.icons8.com/ios-glyphs/30/000000/logout-rounded-left.png" />
+							<a class="logout" href="index.html">Logout</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="containter-grid">
+				<div class="balance">
+					<h1 style="display: inline">
+						Current Balance:
+						<span id="balance__value" style="color: green">215,019.00</span>
+						Rs
+					</h1>
+				</div>
+				<p>As of 2021/08/02, 2.40PM</p>
+			</div>
+			<div class="containter-grid">
+				<div class="form_container">
+					<form>
+						<p>Receipt Number: <span class="receipt-no"></span></p>
+						<input type="text" id="inputReceiverAcc" name="inputReceiverAcc" placeholder="Enter receiver's account number" />
+						<input type="text" id="" name="" placeholder="Confirm receiver's account number" />
+						<input type="password" id="pin" name="" placeholder="Enter your account pin" />
+						<input type="text" id="amount" name="amount" placeholder="Enter the amount to transfer" />
+						<input type="submit" value="Pay Now" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
