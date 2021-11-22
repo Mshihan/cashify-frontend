@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="./../css/style.css" />
     <link rel="stylesheet" href="../css/login.css" />
+    <script src="./../js/login.js"></script>
 
     <title>Cashify | Login</title>
   </head>
@@ -94,13 +95,8 @@
         <div class="slogan">The trust of the nation</div>
         <div class="containter-grid">
           <div class="form_container">
-            <form>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Username"
-              />
+            <form onsubmit="submitForm(event)">
+              <input type="email" id="email" name="Email" placeholder="Email" />
               <input
                 type="password"
                 id="password"
@@ -108,7 +104,7 @@
                 placeholder="Password"
               />
 
-              <div class="alertDiv">
+              <div class="alertDiv" id="alertDiv">
                 <p id="errorText"></p>
               </div>
 
@@ -233,6 +229,6 @@
     </p>
   </footer>
 
-  <script src="../js/script.js" type="text/javascript"></script>
+  <!-- <script src="../js/script.js" type="text/javascript"></script> -->
   <script src="../js/login.js" type="text/javascript"></script>
 </html>

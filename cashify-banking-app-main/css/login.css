@@ -86,6 +86,17 @@ input[type="text"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+input[type="email"] {
+  width: 80%;
+  font-size: 1.5rem;
+  padding: 12px 20px;
+  margin: 1rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 input[type="password"] {
   width: 80%;
   font-size: 1.5rem;
@@ -103,7 +114,9 @@ input[type="password"]:active {
 }
 
 input[type="text"]:focus,
-input[type="text"]:active {
+input[type="text"]:active,
+input[type="email"]:focus,
+input[type="email"]:active {
   outline: 1px solid var(--color-primary-darker) !important;
 }
 
@@ -111,7 +124,8 @@ input[type="password"]:hover {
   outline: 1px solid gray;
 }
 
-input[type="text"]:hover {
+input[type="text"]:hover,
+input[type="email"]:hover {
   outline: 1px solid gray;
 }
 
@@ -209,7 +223,7 @@ button[type="submit"]:hover {
 
 .alertDiv {
   display: none;
-  color: red;
+  color: red !important;
   margin: 1rem 0;
   padding: 5px 50px 0 50px;
 }
@@ -218,8 +232,12 @@ button[type="submit"]:hover {
   display: block !important;
 }
 
+.showAlert > p {
+  color: red;
+}
+
 .errorBorder {
-  border: red 2px solid;
+  outline: red 2px solid;
 }
 
 .backButton {
