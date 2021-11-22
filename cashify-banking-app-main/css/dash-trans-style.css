@@ -384,7 +384,7 @@ form > p {
   border-radius: 3rem;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 870px) {
   /* NAVIGATION */
   .nav {
     height: 7rem;
@@ -479,6 +479,14 @@ form > p {
     display: flex;
     margin-left: 5rem;
   }
+
+  .balance > h1 {
+    font-size: 1rem;
+  }
+
+  .activities {
+    margin: 4rem 0;
+  }
 }
 
 /* added for js transaction function :nive */
@@ -486,7 +494,10 @@ form > p {
   grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: scroll;
+}
+
+.text_area {
+  font-family: inherit;
 }
 
 .movements__row {
@@ -524,4 +535,33 @@ form > p {
 .movements__value {
   font-size: 1.7rem;
   margin-left: auto;
+}
+
+.personalDetails {
+  font-family: inherit;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  padding: 5rem;
+  background-image: var(--gradient-primary);
+  border-radius: 20px;
+}
+
+.personalDetails {
+  margin-top: 3rem;
+}
+
+.personalDetails > .personalDetails_label {
+  margin: 10px 0;
+}
+
+.personalDetails_label > label > span {
+  font-weight: 100;
+}
+
+.balance > h1 {
+  font-size: 2rem;
+}
+
+.transferForm {
+  margin: 5rem 5rem;
 }

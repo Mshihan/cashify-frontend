@@ -33,11 +33,13 @@ body {
 
 /* Login Container classes */
 .login_container_body {
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   justify-content: center;
   background-image: var(--gradient-primary);
   align-items: center;
+  padding-top: 17rem;
+  padding-bottom: 8rem;
 }
 
 .login_container {
@@ -89,11 +91,28 @@ input[type="password"] {
   font-size: 1.5rem;
   padding: 12px 20px;
   margin: 1rem 0;
-
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+input[type="password"]:focus,
+input[type="password"]:active {
+  outline: 1px solid var(--color-primary-darker) !important;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+  outline: 1px solid var(--color-primary-darker) !important;
+}
+
+input[type="password"]:hover {
+  outline: 1px solid gray;
+}
+
+input[type="text"]:hover {
+  outline: 1px solid gray;
 }
 
 .textErrorBorder {
@@ -205,8 +224,8 @@ button[type="submit"]:hover {
 
 .backButton {
   position: fixed;
-  top: 0;
-  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 1rem;
   margin: 2rem;
   background: white;
@@ -214,46 +233,11 @@ button[type="submit"]:hover {
   border-radius: 1rem;
   vertical-align: middle;
   box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 8px 0;
+  display: none;
 }
 
 .backButton:hover {
   cursor: pointer;
-}
-
-.footer {
-  padding: 3rem 6rem;
-  background-color: #37383d;
-  height: 20vh;
-}
-
-.footer__nav {
-  width: 50%;
-  display: inline-block;
-  vertical-align: middle;
-  list-style: none;
-  text-align: right;
-}
-
-.footer__link {
-  font-size: 1.6rem;
-  color: #eee;
-  text-decoration: none;
-}
-
-.footer__link:hover {
-  color: white;
-  font-weight: 400;
-}
-
-.footer__logo {
-  margin-left: 3px;
-  width: 40px;
-  text-align: center;
-}
-
-.footerBrand {
-  font-size: 1.3rem;
-  color: white;
 }
 
 .imageContainer {
@@ -262,15 +246,19 @@ button[type="submit"]:hover {
   vertical-align: top;
 }
 
-.footer > p {
-  text-align: center;
-  margin-top: 1rem;
-  color: rgb(160, 160, 160);
-  font-size: 1.3rem;
-  font-family: "Poppins", sans-serif;
-}
 p > span {
   font-size: 2rem;
+}
+
+@media (max-width: 820px) {
+  .backButton {
+    display: block;
+    border: 2px solid white;
+    background-image: var(--gradient-primary);
+  }
+  .login_container_body {
+    padding-top: 5rem;
+  }
 }
 
 /* FOOTER */

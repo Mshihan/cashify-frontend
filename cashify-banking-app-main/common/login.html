@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="icon"
       href="https://img.icons8.com/color/96/000000/sri-lanka.png"
@@ -13,11 +19,75 @@
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="./../css/style.css" />
     <link rel="stylesheet" href="../css/login.css" />
 
     <title>Cashify | Login</title>
   </head>
   <body class="login">
+    <div class="">
+      <nav class="nav sticky">
+        <img
+          src="./../img/landing-page/logo.svg"
+          class="nav__logo"
+          id="logo"
+          alt="Cashify logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" id="features" href="#section--">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" id="operations" href="#section--"
+              >Operations</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" id="testimonials" href="#section--"
+              >Testimonials</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn" href="./login.html">Login</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn" href="./signup.html">Signup</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- mobile hamburger menu -->
+      <nav class="nav-mobile">
+        <input type="checkbox" id="check" />
+        <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <img
+          src="./../img/landing-page/logo.svg"
+          class="nav-mobile__logo"
+          id="mobile-logo"
+          alt="Cashify logo"
+        />
+        <ul class="nav-mobile__links">
+          <!-- <li class="nav-mobile__item"><a class="nav-mobile__link" href="#section--1">Features</a></li> -->
+          <!-- <li class="nav-mobile__item"><a class="nav-mobile__link" href="#section--2">Operations</a></li> -->
+          <!-- <li class="nav-mobile__item"><a class="nav-mobile__link" href="#section--3">Testimonials</a></li> -->
+          <li class="nav-mobile__item">
+            <a class="nav-mobile__link" href="./login.html">Login</a>
+          </li>
+          <li class="nav-mobile__item">
+            <a class="nav-mobile__link" href="./signup.html">Signup</a>
+          </li>
+          <li class="nav-mobile__item">
+            <a class="nav-mobile__link" href="./aboutus.html">About us</a>
+          </li>
+          <li class="nav-mobile__item">
+            <a class="nav-mobile__link" href="./contact_us.htm">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <div class="login_container_body">
       <div class="login_container">
         <div class="heading">Cashify</div>
@@ -59,34 +129,110 @@
       </div>
       <div class="backButton" onclick="backToHome()">Back to home</div>
     </div>
-    <footer class="footer">
-      <a href="#">
-        <div class="imageContainer">
-          <img
-            src="../img/landing-page/logo.svg"
-            alt="Logo"
-            class="footer__logo"
-          />
-          <p class="footerBrand">Cashify</p>
-        </div>
-      </a>
+  </body>
 
-      <ul class="footer__nav">
+  <footer class="footer">
+    <div class="footer__company-detail">
+      <div class="footer__logo">
+        <img
+          src="./../img/landing-page/logo.svg"
+          class="nav__logo"
+          alt="cashify logo"
+        />
+        <span class="logo-name">Cashify</span>
+      </div>
+      <p class="footer__address">
+        cashify@support.com <br />
+        +94 24 222 4162 <br />
+        No 171, green road,<br />
+        colombo-05.
+      </p>
+    </div>
+    <div class="footer__quick-links">
+      <h2>Quick Links</h2>
+      <hr class="footer__divider" />
+      <ul class="footer__quick-link-nav">
         <li class="footer__item">
-          <a class="footer__link" href="./common/aboutus.html">About</a>
+          <a href="" class="footer__link">about us</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="./common/agrement.html"
-            >Privacy Policy</a
-          >
+          <a href="" class="footer__link">contact us</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="./common/contact_us.htm">Contact Us</a>
+          <a href="" class="footer__link">privacy</a>
+        </li>
+        <li class="footer__item">
+          <a href="" class="footer__link">services</a>
         </li>
       </ul>
-      <p>&copy; All Rights Reserved 2021</p>
-    </footer>
-  </body>
+    </div>
+    <div class="footer__follow-us">
+      <h2>Follow Us</h2>
+      <hr class="footer__divider" />
+      <ul class="follow-us__links">
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__newsletter">
+      <h2>Subscribe to our Newsletter</h2>
+      <hr class="footer__divider" />
+      <div class="footer__email-box">
+        <input
+          type="text"
+          class="email-box__input"
+          placeholder="Enter Your Email"
+        />
+        <p class="email-box__warning">
+          CASHIFY application is responsible for processing your personal data.
+          The information collected above is used to send our offers, news and
+          events. You have, amongst others, the right to access and correct your
+          personal data and to request erasure. For more information about how
+          we protect your personal data, please read our Privacy Policy or
+          contact our data protection officer by e-mail at the following address
+          dpo@cashify.lk
+        </p>
+        <button class="email-box__button" type="button">
+          submit<i class="far fa-paper-plane email__send-icon"></i>
+        </button>
+      </div>
+    </div>
+    <hr class="credit__divider" />
+    <p class="footer__credit">
+      Copyright ©2021 All rights reserved | This page is made with
+      <a
+        href="https://github.com/Nivethan-Ar/cashify-banking-app"
+        target="_blank"
+        ><i class="fas fa-heartbeat footer__heart"></i
+      ></a>
+      by
+      <a
+        href="https://www.linkedin.com/in/nivethan-a/"
+        target="_blank"
+        class="footer__name"
+        >Nivethan Ar
+      </a>
+    </p>
+  </footer>
+
   <script src="../js/script.js" type="text/javascript"></script>
   <script src="../js/login.js" type="text/javascript"></script>
 </html>
