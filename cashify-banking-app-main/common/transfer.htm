@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css" />
 
     <link rel="stylesheet" href="../css/dash-trans-style.css" />
+    <script src="../js/transfer.js"></script>
   </head>
 
   <body class="transfer">
@@ -24,21 +25,21 @@
       />
       <ul class="nav__links">
         <li class="nav__item">
-          <a class="nav__link" href="dashboard.htm">Dashboard</a>
+          <a class="nav__link" href="./dashboard.htm">Dashboard</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link" href="">Fund Tranfer</a>
+          <a class="nav__link" href="#">Fund Tranfer</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link" href="../common/agrement.html"
-            >Privacy Policies</a
+          <a class="nav__link" href="./agrement.html">Privacy Policies</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./contact_us.htm">Contact Us</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="../index.html" onclick="clearStorage()"
+            >Logout</a
           >
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="../common/contact_us.htm">Contact Us</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="index.html">Logout</a>
         </li>
         <li class="nav__item" id="nav_hamburger">
           <img
@@ -50,25 +51,25 @@
               <img
                 src="https://img.icons8.com/material/96/000000/dashboard-layout.png"
               />
-              <a href="../common/dashboard.htm">Dashboard</a>
+              <a href="./dashboard.htm">Dashboard</a>
             </div>
             <div class="dropdown_item">
               <img
                 src="https://img.icons8.com/ios-glyphs/90/000000/back-sorting.png"
               />
-              <a href="#">Fund Transfer</a>
+              <a href="">Fund Transfer</a>
             </div>
             <div class="dropdown_item">
               <img
                 src="https://img.icons8.com/ios-filled/50/000000/terms-and-conditions.png"
               />
-              <a href="../common/agrement.html">Privacy Policies</a>
+              <a href="./agrement.html">Privacy Policies</a>
             </div>
             <div class="dropdown_item">
               <img
                 src="https://img.icons8.com/material/30/000000/call-female.png"
               />
-              <a href="../common/contact_us.htm">Contact Us</a>
+              <a href="./contact_us.htm">Contact Us</a>
             </div>
             <div class="dropdown_item">
               <img
@@ -83,58 +84,64 @@
     <div class="container">
       <div class="containter-grid">
         <div class="balance">
+          <p class="welcome">
+            WELCOME,
+            <span id="lastName" style="text-transform: uppercase">....</span>
+          </p>
           <h1 style="display: inline">
-            Current Balance:
-            <span id="balance__value" style="color: green">215,019.00</span>
-            Rs
+            Current Balance: Rs&nbsp;
+            <span id="balance__value" style="color: green">..</span>
           </h1>
         </div>
-        <p>As of 2021/08/02, 2.40PM</p>
+        <p id="currentTime">As of 2021/08/02 2.40PM,</p>
 
         <div class="personalDetails">
           <h2>Receiver Account Details</h2>
           <div class="personalDetails_label">
-            <label><b>Name:</b> <span>Mohamed Sihan</span></label>
+            <label><b>Name:</b> <span id="receiverName"></span></label>
           </div>
           <div class="personalDetails_label">
-            <label><b>NIC:</b> <span>199634900712</span></label>
+            <label><b>NIC:</b> <span id="receiverNic"></span></label>
           </div>
           <div class="personalDetails_label">
-            <label
-              ><b>Address:</b>
-              <span>No.08, Deewarajaya Mw, Modara, Moratuwa</span></label
-            >
+            <label><b>Address:</b> <span id="receiverAddress"></span></label>
           </div>
         </div>
       </div>
       <div class="containter-grid transferForm">
         <div class="form_container">
-          <form>
+          <form onsubmit="transferFunds(event)">
             <p>Receipt Number: <span class="receipt-no"></span></p>
             <input
-              type="text"
+              type="email"
               id="inputReceiverAcc"
               name="inputReceiverAcc"
-              placeholder="Enter receiver's account number"
+              placeholder="Enter receiver's email id"
             />
             <input
-              type="text"
-              id=""
+              type="email"
+              id="verifyreceiverAcc"
               name=""
-              placeholder="Confirm receiver's account number"
+              placeholder="Confirm receiver's email id"
+              onblur="getReceiverAcc()"
             />
             <input
               type="password"
-              id="pin"
+              id="password"
               name=""
               placeholder="Enter your account pin"
+              onblur="getPassword()"
             />
             <input
               type="text"
-              id="amount"
+              id="transferAmount"
               name="amount"
               placeholder="Enter the amount to transfer"
+              onblur="getAmount()"
             />
+            <div class="alertDiv" id="alertDiv">
+              <p id="errorText"></p>
+            </div>
             <input type="submit" value="Pay Now" />
           </form>
         </div>

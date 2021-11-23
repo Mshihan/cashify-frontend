@@ -32,11 +32,10 @@ function getDetails() {
 
     document.getElementById("currentTime").innerHTML = dateTimeNow;
 
-    console.log(user.transactions);
     var transactions = "";
     for (var i = 0; i < user.transactions.length; i++) {
-      console.log();
-      if (user.transactions.transactionType === "Deposit") {
+      console.log(user.transactions.transactionType);
+      if (user.transactions[i].transactionType === "Deposit") {
         transactions += `<div class="movements__row"><div class="movements__type movements__type--deposit">deposit</div><div class="movements__date">${user.transactions[
           i
         ].DateTime.substr(

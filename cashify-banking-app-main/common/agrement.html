@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/dash-trans-style.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/agrement.css" />
+    <script src="../js/common.js"></script>
 
     <title>Cashify | Privacy Policy</title>
   </head>
@@ -29,21 +30,21 @@
       />
       <ul class="nav__links">
         <li class="nav__item">
-          <a class="nav__link" href="dashboard.htm">Dashboard</a>
+          <a class="nav__link" href="./dashboard.htm">Dashboard</a>
         </li>
         <li class="nav__item">
           <a class="nav__link" href="">Fund Tranfer</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link" href="../common/agrement.html"
-            >Privacy Policies</a
+          <a class="nav__link" href="./agrement.html">Privacy Policies</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./contact_us.htm">Contact Us</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="index.html" onclick="clearStorage()"
+            >Logout</a
           >
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="../common/contact_us.htm">Contact Us</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="index.html">Logout</a>
         </li>
         <li class="nav__item" id="nav_hamburger">
           <img
@@ -55,25 +56,25 @@
               <img
                 src="https://img.icons8.com/material/96/000000/dashboard-layout.png"
               />
-              <a href="../common/dashboard.htm">Dashboard</a>
+              <a href="./dashboard.htm">Dashboard</a>
             </div>
             <div class="dropdown_item">
               <img
                 src="https://img.icons8.com/ios-glyphs/90/000000/back-sorting.png"
               />
-              <a href="#">Fund Transfer</a>
+              <a href="./transfer.htm">Fund Transfer</a>
             </div>
             <div class="dropdown_item">
               <img
                 src="https://img.icons8.com/ios-filled/50/000000/terms-and-conditions.png"
               />
-              <a href="../common/agrement.html">Privacy Policies</a>
+              <a href="./agrement.html">Privacy Policies</a>
             </div>
             <div class="dropdown_item">
               <img
                 src="https://img.icons8.com/material/30/000000/call-female.png"
               />
-              <a href="../common/contact_us.htm">Contact Us</a>
+              <a href="./contact_us.htm">Contact Us</a>
             </div>
             <div class="dropdown_item">
               <img
@@ -316,4 +317,106 @@
       </div>
     </main>
   </body>
+
+  <footer class="footer">
+    <div class="footer__company-detail">
+      <div class="footer__logo">
+        <img
+          src="./../img/landing-page/logo.svg"
+          class="nav__logo"
+          alt="cashify logo"
+        />
+        <span class="logo-name">Cashify</span>
+      </div>
+      <p class="footer__address">
+        cashify@support.com <br />
+        +94 24 222 4162 <br />
+        No 171, green road,<br />
+        colombo-05.
+      </p>
+    </div>
+    <div class="footer__quick-links">
+      <h2>Quick Links</h2>
+      <hr class="footer__divider" />
+      <ul class="footer__quick-link-nav">
+        <li class="footer__item">
+          <a href="" class="footer__link">about us</a>
+        </li>
+        <li class="footer__item">
+          <a href="" class="footer__link">contact us</a>
+        </li>
+        <li class="footer__item">
+          <a href="" class="footer__link">privacy</a>
+        </li>
+        <li class="footer__item">
+          <a href="" class="footer__link">services</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__follow-us">
+      <h2>Follow Us</h2>
+      <hr class="footer__divider" />
+      <ul class="follow-us__links">
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="footer__follow-link"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__newsletter">
+      <h2>Subscribe to our Newsletter</h2>
+      <hr class="footer__divider" />
+      <div class="footer__email-box">
+        <input
+          type="text"
+          class="email-box__input"
+          placeholder="Enter Your Email"
+        />
+        <p class="email-box__warning">
+          CASHIFY application is responsible for processing your personal data.
+          The information collected above is used to send our offers, news and
+          events. You have, amongst others, the right to access and correct your
+          personal data and to request erasure. For more information about how
+          we protect your personal data, please read our Privacy Policy or
+          contact our data protection officer by e-mail at the following address
+          dpo@cashify.lk
+        </p>
+        <button class="email-box__button" type="button">
+          submit<i class="far fa-paper-plane email__send-icon"></i>
+        </button>
+      </div>
+    </div>
+    <hr class="credit__divider" />
+    <p class="footer__credit">
+      Copyright ©2021 All rights reserved | This page is made with
+      <a
+        href="https://github.com/Nivethan-Ar/cashify-banking-app"
+        target="_blank"
+        ><i class="fas fa-heartbeat footer__heart"></i
+      ></a>
+      by
+      <a
+        href="https://www.linkedin.com/in/nivethan-a/"
+        target="_blank"
+        class="footer__name"
+        >Nivethan Ar
+      </a>
+    </p>
+  </footer>
 </html>
