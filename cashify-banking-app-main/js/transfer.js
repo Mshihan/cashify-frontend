@@ -15,7 +15,7 @@ function getDetails() {
   var data = {
     email: email,
   };
-  fetch("http://127.0.0.1:3000/api/v1/users/details", {
+  fetch("https://cashify-banking.herokuapp.com/api/v1/users/details", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +32,6 @@ function getDetails() {
       user.amount.toFixed(2);
     document.getElementById("currentTime").innerHTML = dateTimeNow;
     password = user.password;
-    accountBalance = user.amount;
   });
 }
 
@@ -41,6 +40,7 @@ function getReceiverAcc() {
     document.getElementById("verifyreceiverAcc").value;
   const receiverAccount = document.getElementById("inputReceiverAcc").value;
   if (receiverAccountVerify === receiverAccount) {
+    mailValidate = true;
     document.getElementById("alertDiv").classList.remove("showAlert");
     document.getElementById("errorText").innerText =
       "Receiver email id dosen't match **";
@@ -53,7 +53,7 @@ function getReceiverAcc() {
     var data = {
       email: receiverAccountVerify,
     };
-    fetch("http://127.0.0.1:3000/api/v1/users/details", {
+    fetch("https://cashify-banking.herokuapp.com/api/v1/users/details", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -72,6 +72,7 @@ function getReceiverAcc() {
       accountBalance = user.amount;
     });
   } else {
+    mailValidate = false;
     document.getElementById("alertDiv").classList.add("showAlert");
     document.getElementById("errorText").innerText =
       "Receiver email id dosen't match **";
@@ -104,7 +105,7 @@ function transferFunds(event) {
 
     if (mailValidate && passwordValidate && amountValidate) {
       console.log("working");
-      fetch("http://127.0.0.1:3000/api/v1/users/transfer", {
+      fetch("https://cashify-banking.herokuapp.com/api/v1/users/transfer", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +120,6 @@ function transferFunds(event) {
         }
       });
     }
-    document.getElementById("password").classList.add("errorBorder");
   }
 }
 
@@ -127,9 +127,11 @@ function getPassword() {
   const pin = document.getElementById("password").value;
 
   if (pin === password) {
+    passwordValidate = true;
     document.getElementById("password").classList.remove("errorBorder");
     document.getElementById("alertDiv").classList.remove("showAlert");
   } else {
+    passwordValidate = false;
     document.getElementById("password").classList.add("errorBorder");
     document.getElementById("errorText").innerText =
       "Your password dosen't match **";
@@ -142,10 +144,19 @@ function getAmount() {
 
   const transferAmount = document.getElementById("transferAmount").value;
 
-  if (accountBalance > transferAmount) {
+  console.log(
+    document.getElementById("balance__value").innerHTML.toString(),
+    transferAmount
+  );
+  if (
+    parseInt(document.getElementById("balance__value").innerHTML.toString()) >
+    parseInt(transferAmount)
+  ) {
+    amountValidate = true;
     document.getElementById("transferAmount").classList.remove("errorBorder");
     document.getElementById("alertDiv").classList.remove("showAlert");
   } else {
+    amountValidate = false;
     document.getElementById("transferAmount").classList.add("errorBorder");
     document.getElementById("errorText").innerText =
       "Your balance is insufficient to transfer **";

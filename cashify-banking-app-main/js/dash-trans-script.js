@@ -8,7 +8,7 @@ function getDetails() {
   var data = {
     email: email,
   };
-  fetch("http://127.0.0.1:3000/api/v1/users/details", {
+  fetch("https://cashify-banking.herokuapp.com/api/v1/users/details", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
