@@ -91,3 +91,119 @@ function signInRedirect() {
 function backToHome() {
   window.location.href = "../index.html";
 }
+
+function checkEmail() {
+  var email = document.getElementById("email").value;
+  var data = {
+    email: email,
+  };
+  fetch("http://127.0.0.1:3000/api/v1/users/email-check", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": data.length,
+    },
+    body: JSON.stringify(data),
+  })
+    .then(async (res) => {
+      const response = await res.json();
+      if (response.status === "fail") {
+        document.getElementById("email").classList.add("errorBorder");
+      } else {
+        document.getElementById("email").classList.remove("errorBorder");
+      }
+    })
+    .catch((error) => console.log(error));
+  //   const response = await res.json();
+  //   localStorage.setItem("token", response.token);
+  //   localStorage.setItem("email", username);
+  //   console.log(response.token);
+  //   if (response.token) {
+  //     window.location.href = "dashboard.htm";
+  //   } else {
+  //     hasError = true;
+  //   }
+  //   if (hasError) {
+  //     document.getElementById("alertDiv").classList.add("showAlert");
+  //     document.getElementById("errorText").innerText =
+  //       "Please check the credentials and try again.";
+  //   } else {
+  //     document.getElementById("errorText").innerText = "";
+  //     //submit to the database
+
+  //     document.getElementById("password").value = "";
+  //     document.getElementById("email").value = "";
+  //   })
+  // });
+}
+
+function checkNic() {
+  var nic = document.getElementById("nic").value;
+  var data = {
+    nic: nic,
+  };
+  fetch("http://127.0.0.1:3000/api/v1/users/nic-check", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": data.length,
+    },
+    body: JSON.stringify(data),
+  })
+    .then(async (res) => {
+      const response = await res.json();
+      if (response.status === "fail") {
+        document.getElementById("nic").classList.add("errorBorder");
+      } else {
+        document.getElementById("nic").classList.remove("errorBorder");
+      }
+    })
+    .catch((error) => console.log(error));
+}
+
+function signUp() {
+  var firstName = document.getElementById("firstName").value;
+  var lastName = document.getElementById("lastName").value;
+  var dob = document.getElementById("dob").value;
+  var nic = document.getElementById("nic").value;
+  var phoneNumber = document.getElementById("phoneNumber").value;
+  var address = document.getElementById("address").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var passwordConfirm = document.getElementById("rpassword").value;
+
+  var data = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    nic: nic,
+    password: password,
+    passwordConfirm: passwordConfirm,
+    address: address,
+    phoneNumber: phoneNumber,
+    dob: dob,
+  };
+  fetch("http://127.0.0.1:3000/api/v1/users/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": data.length,
+    },
+    body: JSON.stringify(data),
+  })
+    .then(async (res) => {
+      const response = await res.json();
+      console.log(response);
+      if (response.token) {
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("email", email);
+
+        window.location.href = "dashboard.htm";
+      } else {
+        document.getElementById("alertDiv").classList.add("showAlert");
+        document.getElementById("errorText").innerText =
+          "Please check the credentials and try again.";
+      }
+    })
+    .catch((error) => console.log(error));
+}

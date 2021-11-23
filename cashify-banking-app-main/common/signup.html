@@ -98,12 +98,13 @@
             <div class="slogan">The trust of the nation</div>
             <div class="containter-grid">
               <div class="form_container">
-                <form onsubmit="submitForm(event);">
+                <div>
                   <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Username"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    onblur="checkEmail()"
                   />
                   <input
                     type="password"
@@ -131,7 +132,7 @@
                       >Show Password</label
                     >
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -159,32 +160,34 @@
                     />
                   </div>
                   <div class="form_row">
-                    <input
+                    <!-- <input
                       type="email"
                       id="email"
                       name="email"
                       placeholder="Email"
+                    /> -->
+                    <input
+                      type="date"
+                      id="dob"
+                      name="dob"
+                      placeholder="Date of Birth"
                     />
                     <input
                       type="text"
                       id="nic"
                       name="nic"
                       placeholder="NIC Number"
+                      onblur="checkNic()"
                     />
                   </div>
 
                   <div class="form_row">
                     <input
+                      style="width: 100%"
                       type="text"
                       id="phoneNumber"
                       name="phoneNumber"
                       placeholder="Phone Number"
-                    />
-                    <input
-                      type="date"
-                      id="dob"
-                      name="dob"
-                      placeholder="Date of Birth"
                     />
                   </div>
 
@@ -201,17 +204,16 @@
             </div>
           </div>
         </div>
-
         <div class="submit">
-          <button type="submit">SIGN UP</button>
+          <button type="submit" onclick="signUp()">SIGN UP</button>
         </div>
 
         <div class="alreadyMember">
           <p onclick="signInRedirect();">Already a member?, Sign in yourself</p>
         </div>
-      </div>
 
-      <div class="backButton" onclick="backToHome()">Back to home</div>
+        <div class="backButton" onclick="backToHome()">Back to home</div>
+      </div>
     </div>
   </body>
 

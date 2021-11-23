@@ -247,13 +247,14 @@ button[type="submit"]:hover {
 
 #errorText {
   text-align: left;
+  color: red;
 }
 .showAlert {
   display: block !important;
 }
 
 .errorBorder {
-  border: red 2px solid;
+  border: red 2px solid !important;
 }
 
 .backButton {
